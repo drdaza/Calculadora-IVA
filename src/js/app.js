@@ -15,9 +15,6 @@
 let button = document.getElementById("button");
 button.addEventListener("click",function(){
     let information = document.getElementById("price-enter");
-    console.log(information.value);
-
-    console.log(calculeIVA(information.value, 10));
     ShowInScreen(calculeIVA(parseInt(information.value, 10)));
 })
 function calculeIVA(price){
