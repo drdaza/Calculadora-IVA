@@ -12,11 +12,11 @@
 * Acceder al espacio donde voy a mostrar el calculo 
 * Mostrar el resultado.
 */
-let button = document.getElementById("button");
-button.addEventListener("click",function(){
-    let information = document.getElementById("price-enter");
-    ShowInScreen(calculeIVA(parseInt(information.value, 10)));
-})
+pressButton();
+function pressButton(){
+    let button = document.getElementById("button");
+    button.addEventListener("click",app);
+}
 function calculeIVA(price){
     let calc = price + (price * 0.21);
     return calc;
@@ -24,4 +24,9 @@ function calculeIVA(price){
 function ShowInScreen(value){
     let spaceCalculator = document.getElementById("space-calculator");
     spaceCalculator.innerHTML = `<h1>${value}</h1>`;
+}
+function app(){
+    let information = document.getElementById("price-enter");
+    const priceFinal= calculeIVA(parseFloat(information.value, 10.0));
+    ShowInScreen(priceFinal);
 }
